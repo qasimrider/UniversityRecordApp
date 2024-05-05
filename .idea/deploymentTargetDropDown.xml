@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="deploymentTargetDropDown">
+    <value>
+      <entry key="app">
+        <State>
+          <targetSelectedWithDropDown>
+            <Target>
+              <type value="QUICK_BOOT_TARGET" />
+              <deviceKey>
+                <Key>
+                  <type value="VIRTUAL_DEVICE_PATH" />
+                  <value value="$USER_HOME$/.android/avd/Pixel_5_API_28.avd" />
+                </Key>
+              </deviceKey>
+            </Target>
+          </targetSelectedWithDropDown>
+          <timeTargetWasSelectedWithDropDown value="2024-05-04T18:32:12.716144Z" />
+        </State>
+      </entry>
+      <entry key="common">
+        <State />
+      </entry>
+      <entry key="detail-university-feature">
+        <State />
+      </entry>
+      <entry key="dtos">
+        <State />
+      </entry>
+      <entry key="feature-university-detail">
+        <State />
+      </entry>
+      <entry key="feature-university-list">
+        <State />
+      </entry>
+      <entry key="featureuniversitylist">
+        <State />
+      </entry>
+      <entry key="list-university-feature">
+        <State />
+      </entry>
+    </value>
+  </component>
+</project>

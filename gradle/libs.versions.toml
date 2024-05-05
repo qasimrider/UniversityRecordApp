@@ -1,0 +1,75 @@
+[versions]
+agp = "8.3.1"
+kotlin = "1.9.0"
+coreKtx = "1.13.1"
+junit = "4.13.2"
+junitVersion = "1.1.5"
+espressoCore = "3.5.1"
+appcompat = "1.6.1"
+material = "1.10.0"
+constraintlayout = "2.1.4"
+navigationFragmentKtx = "2.7.7"
+navigationSafeArgsGradlePlugin = "2.7.7"
+navigationUiKtx = "2.7.7"
+lifecycleLivedataKtx = "2.7.0"
+lifecycleViewmodelKtx = "2.7.0"
+fragmentKtx = "1.5.6"
+databindingRuntime = "8.4.0"
+glide = "4.16.0"
+hilt = "2.51"
+hiltLifeCycle = "1.0.0-alpha03"
+retrofitCorountine = "0.9.2"
+flowCallAdapter = "1.0.0"
+retofit2 = "2.9.0"
+okHttpLogging = "4.12.0"
+moshi = "1.15.0"
+navSafeArgsPlugin = "2.7.7"
+roomVersion = "2.6.1"
+
+
+
+
+
+
+[libraries]
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+androidx-navigation-fragment-ktx = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "navigationFragmentKtx" }
+androidx-navigation-ui-ktx = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "navigationUiKtx" }
+androidx-lifecycle-livedata-ktx = { group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version.ref = "lifecycleLivedataKtx" }
+androidx-lifecycle-viewmodel-ktx = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycleViewmodelKtx" }
+androidx-fragment-ktx = { group = "androidx.fragment", name = "fragment-ktx", version.ref = "fragmentKtx" }
+androidx-databinding-runtime = { group = "androidx.databinding", name = "databinding-runtime", version.ref = "databindingRuntime" }
+glide = { group = "com.github.bumptech.glide", name = "glide", version.ref = "glide" }
+dagger-hilt = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
+dagger-hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hilt" }
+dagger-hilt-lifecycle = { group = "androidx.hilt", name = "hilt-lifecycle-viewmodel", version.ref = "hiltLifeCycle" }
+retrofit-coroutine-adapter = { group = "com.jakewharton.retrofit", name = "retrofit2-kotlin-coroutines-adapter", version.ref = "retrofitCorountine" }
+flow-call-adapter = { group = "tech.thdev", name = "flow-call-adapter-factory", version.ref = "flowCallAdapter" }
+retrofit-converter = { group = "com.squareup.retrofit2", name = "converter-moshi", version.ref = "retofit2" }
+retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retofit2" }
+ok-http-interceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okHttpLogging" }
+moshi = { group = "com.squareup.moshi", name = "moshi", version.ref = "moshi" }
+moshi_kotlin = { group = "com.squareup.moshi", name = "moshi-kotlin", version.ref = "moshi" }
+android-lifecycle = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleLivedataKtx" }
+android-room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "roomVersion" }
+android-roomktx = { group = "androidx.room", name = "room-ktx", version.ref = "roomVersion" }
+androidx-room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "roomVersion" }
+#flow-call-adapter = {group = "", name = "", version.ref = ""}
+
+
+[plugins]
+androidApplication = { id = "com.android.application", version.ref = "agp" }
+jetbrainsKotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+androidLibrary = { id = "com.android.library", version.ref = "agp" }
+hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
+#navsafeargs = { id = "androidx.navigation:navigation-safe-args-gradle-plugin", version.ref = "navSafeArgsPlugin" }
+
+#classpath ("androidx.navigation:navigation-safe-args-gradle-plugin:2.7.7")
+
+

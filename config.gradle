@@ -1,0 +1,49 @@
+subprojects {
+    afterEvaluate { project ->
+        if (project.hasProperty('android')) {
+            android {
+                compileSdkVersion(34)
+                defaultConfig {
+                    minSdkVersion(26)
+                    targetSdkVersion(34)
+                    testInstrumentationRunner("androidx.test.runner.AndroidJUnitRunner")
+
+                }
+                buildTypes {
+                    release {
+                        buildConfigField "String", "BASE_URL", '"http://universities.hipolabs.com/"'
+                        resValue "string", "application_name", "University Uae"
+                    }
+
+                    debug {
+                        buildConfigField "String", "BASE_URL", '"http://universities.hipolabs.com/"'
+                        resValue "string", "application_name", "University Uae Dev"
+                    }
+
+                }
+
+                compileOptions {
+                    sourceCompatibility JavaVersion.VERSION_1_8
+                    targetCompatibility JavaVersion.VERSION_1_8
+                }
+
+                viewBinding {
+                    android.buildFeatures.viewBinding = true
+                    android.buildFeatures.dataBinding = true
+                }
+
+                kotlinOptions {
+                    jvmTarget = '1.8'
+                }
+//                packagingOptions {
+//                    resources {
+//                        excludes += '/META-INF/{AL2.0,LGPL2.1}'
+//                    }
+//                }
+            }
+        }
+    }
+}
+
+
+
