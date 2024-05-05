@@ -9,13 +9,9 @@ import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
 class UniversityRepositoryImpl @Inject constructor(
-    private val universityWebService: UniversityWebService, private val uniDao: UniDao
-) :
-    UniversityRepository {
-//    override fun uaeUniversities(): Flow<Result<List<UniversityView>>> {
-//        return flow { emit(universityWebService.uaeUniversities().map { it.toUi() }) }.asResult()
-//    }
-
+    private val universityWebService: UniversityWebService,
+    private val uniDao: UniDao
+) : UniversityRepository {
     override fun uaeUniversities(): Flow<Result<List<UniversityView>>> =
         networkBoundResource(
             query = { uniDao.getAllUniversities() },

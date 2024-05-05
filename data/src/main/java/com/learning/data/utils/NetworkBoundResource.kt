@@ -18,37 +18,36 @@ inline fun <DbType, RemoteType, ReturnType> networkBoundResource(
     crossinline localToUiMapper: (DbType) -> ReturnType,
     crossinline remoteToUiMapper: (RemoteType) -> ReturnType,
     noinline saveFetchResults: suspend (RemoteType) -> Unit,
-) =
-    flow {
-        try {
-            //fetch local data from room
-            //Room either returns an empty list , or a null object , depending on the return type of the query
-            val localData = query().firstOrNull()
+) = flow {
+    try {
+        //fetch local data from room
+        //Room either returns an empty list , or a null object , depending on the return type of the query
+        val localData = query().firstOrNull()
 
-            val localUiData = localData?.let {
-                //convert local to UI
-                val localUiData = localToUiMapper(it)
-                //if type is of Collection , only emit if not empty
-                emitLocal(localUiData)
-                localUiData
-            }
-
-            val remoteData = apiCall()
-            //convert remote to UI
-            val remoteUiData = remoteToUiMapper(remoteData)
-
-            //emit again , if there was a change in the datasets
-            if (localUiData != null && (localUiData != remoteUiData)) {
-                saveFetchResults(remoteData)
-                emit(Result.Success(localToUiMapper(query().first())))
-            } else { //If local didn't emit , we would still want to emit remote
-                emit(Result.Success(remoteUiData))
-            }
-        } catch (ex: Exception) {
-            ex.printStackTrace()
-            emit(Result.Error(ex.toError()))
+        val localUiData = localData?.let {
+            //convert local to UI
+            val localUiData = localToUiMapper(it)
+            //if type is of Collection , only emit if not empty
+            emitLocal(localUiData)
+            localUiData
         }
-    }.flowOn(Dispatchers.IO)
+
+        val remoteData = apiCall()
+        //convert remote to UI
+        val remoteUiData = remoteToUiMapper(remoteData)
+
+        //emit again , if there was a change in the datasets
+        if (localUiData != null && (localUiData != remoteUiData)) {
+            saveFetchResults(remoteData)
+            emit(Result.Success(localToUiMapper(query().first())))
+        } else { //If local didn't emit , we would still want to emit remote
+            emit(Result.Success(remoteUiData))
+        }
+    } catch (ex: Exception) {
+        ex.printStackTrace()
+        emit(Result.Error(ex.toError()))
+    }
+}.flowOn(Dispatchers.IO)
 
 suspend fun <ReturnType> FlowCollector<Result<ReturnType>>.emitLocal(localUiData: ReturnType) {
     if (localUiData is Collection<*>) {
